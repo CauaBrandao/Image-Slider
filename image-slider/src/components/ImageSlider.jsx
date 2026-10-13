@@ -1,6 +1,14 @@
+import { useState } from 'react';
+import { slides } from '../data/slides.js';
 import SliderControls from './SliderControls.jsx';
 
 export default function ImageSlider() {
+  const [index, setIndex] = useState(2);
+  const activeSlide = slides[index];
+
+  const next = () => setIndex(current => (current + 1) % slides.length);
+  const previous = () => setIndex(current => (current - 1 + slides.length) % slides.length);
+
   return (
     <section aria-label="Galeria da vida selvagem" className="relative w-full max-w-lg mx-auto lg:max-w-none">
       {/* Cartões inclinados de fundo (com ângulos fixos, sem Math.random) */}
@@ -9,31 +17,42 @@ export default function ImageSlider() {
 
       {/* Cartão principal do carrossel */}
       <div className="relative z-10 bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-mauve/10 flex flex-col gap-6">
-        {/* Imagem do slide */}
+        {/* Camada das Imagens com map() e transição */}
         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100">
-          <img
-            src="/images/image-3.jpg"
-            alt="Pandas em seu habitat"
-            className="w-full h-full object-cover"
-          />
+          {slides.map((slide, i) => (
+            <img
+              key={slide.id}
+              src={slide.image}
+              alt={slide.alt}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out ${
+                i === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              }`}
+            />
+          ))}
         </div>
 
-        {/* Informações e controles */}
+        {/* Informações dinâmicas do slide ativo */}
         <div className="flex flex-col gap-4">
           <div className="space-y-2">
             <span className="inline-block text-xs font-semibold tracking-wider uppercase text-mauve bg-mauve/10 px-3 py-1 rounded-full">
-              Espécie Protegida
+              {activeSlide.badge || activeSlide.species}
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-ink">
-              Panda-gigante
+              {activeSlide.animal}
             </h2>
             <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-              Uma das espécies mais carismáticas da China. O panda se alimenta principalmente de bambu e representa a harmonia com as florestas orientais.
+              {activeSlide.description}
             </p>
           </div>
 
           <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
-            <SliderControls />
+            <SliderControls
+              index={index}
+              count={slides.length}
+              onPrevious={previous}
+              onNext={next}
+              onSelect={setIndex}
+            />
           </div>
         </div>
       </div>
