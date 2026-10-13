@@ -1,7 +1,7 @@
 /**
- * Componente Background
- * Renderiza o fundo com tons claros (#FAF8FF), gradientes suaves em lilás/violeta
- * e elementos decorativos com posições/rotações estáticas (sem Math.random()).
+ * Componente Background fiel ao Figma
+ * Fundo claro (#FAF8FF) com a grande forma orgânica arredondada em tom lilás suave (#EDE8F8)
+ * localizada no canto superior direito conforme os artboards Desktop e Mobile.
  */
 export default function Background() {
   return (
@@ -9,15 +9,11 @@ export default function Background() {
       className="fixed inset-0 pointer-events-none -z-10 overflow-hidden bg-lavender"
       aria-hidden="true"
     >
-      {/* Halo de luz lilás no topo esquerdo */}
-      <div className="absolute -top-40 -left-40 w-[28rem] h-[28rem] rounded-full bg-mauve/10 blur-[100px]" />
+      {/* Forma orgânica arredondada no canto superior direito (Figma) */}
+      <div className="absolute top-0 right-0 w-[360px] h-[360px] sm:w-[480px] sm:h-[480px] lg:w-[620px] lg:h-[580px] rounded-bl-[200px] sm:rounded-bl-[280px] lg:rounded-bl-[360px] bg-[#EDE8F8]/90" />
 
-      {/* Halo de luz violeta na base direita */}
-      <div className="absolute -bottom-48 -right-48 w-[34rem] h-[34rem] rounded-full bg-mauve/15 blur-[120px]" />
-
-      {/* Cartões decorativos de fundo no desktop com ângulos e posições fixas */}
-      <div className="hidden xl:block absolute top-[20%] right-[10%] w-96 h-[32rem] rounded-3xl bg-white/40 border border-mauve/10 shadow-lg -rotate-6 transition-transform" />
-      <div className="hidden xl:block absolute top-[24%] right-[6%] w-96 h-[32rem] rounded-3xl bg-white/30 border border-mauve/10 shadow-md rotate-3 transition-transform" />
+      {/* Leve gradiente difuso adicional para profundidade sutil */}
+      <div className="absolute bottom-0 left-0 w-80 h-80 rounded-tr-[180px] bg-[#EDE8F8]/40" />
     </div>
   );
 }

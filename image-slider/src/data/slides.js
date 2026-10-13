@@ -5,7 +5,8 @@ export const slides = [
     animal: 'Cachorrinhos',
     species: 'Canis lupus familiaris',
     badge: 'Companheiros',
-    summary: 'Lealdade, curiosidade e afeto sem limites.',
+    tag: 'Fauna Doméstica',
+    summary: 'Curiosos, brincalhões e companheiros leais.',
     description: 'Companheiros curiosos e leais que transformam qualquer momento em afeto puro e alegria contagiante.',
     alt: 'Dois cachorrinhos curiosos olhando atentamente'
   },
@@ -15,8 +16,9 @@ export const slides = [
     animal: 'Urso',
     species: 'Ursus arctos',
     badge: 'Vida Selvagem',
+    tag: 'Predador das Florestas',
     summary: 'Força bruta e adaptabilidade nas florestas.',
-    description: 'Força e vida selvagem em perfeita harmonia com os ecossistemas montanhosos e florestas intocadas.',
+    description: 'Imponente, resiliente e solitário. Uma das maiores forças dos ecossistemas montanhosos e florestas intocadas.',
     alt: 'Grande urso pardo em seu habitat natural na floresta'
   },
   {
@@ -25,8 +27,9 @@ export const slides = [
     animal: 'Panda-gigante',
     species: 'Ailuropoda melanoleuca',
     badge: 'Espécie Protegida',
-    summary: 'O panda se alimenta principalmente de bambu.',
-    description: 'Uma das espécies mais carismáticas da China. O panda se alimenta principalmente de bambu e representa a harmonia com as florestas orientais.',
+    tag: 'Santuário Oriental',
+    summary: 'Calmo, curioso e inconfundível.',
+    description: 'Calmo, curioso e inconfundível. Uma das espécies mais carismáticas das florestas da China.',
     alt: 'Panda-gigante relaxando tranquilamente entre vegetação'
   },
   {
@@ -35,8 +38,9 @@ export const slides = [
     animal: 'Leão',
     species: 'Panthera leo',
     badge: 'Predador Alfa',
-    summary: 'Estrutura social única e olhar imponente.',
-    description: 'Um grande felino social que domina as savanas com sua juba imponente e liderança de grupo admirável.',
+    tag: 'Rei da Savana',
+    summary: 'Estrutura social única e postura majestosa.',
+    description: 'Majestoso, líder e imponente. O rei das savanas africanas com uma estrutura social fascinante.',
     alt: 'Retrato de um leão macho majestoso com juba imponente'
   },
   {
@@ -45,8 +49,9 @@ export const slides = [
     animal: 'Girafa',
     species: 'Giraffa camelopardalis',
     badge: 'Herbívoro Gigante',
-    summary: 'Animal terrestre de grande altura.',
-    description: 'Animal terrestre de grande altura que percorre as planícies com elegância ímpar e calma natural.',
+    tag: 'Planícies Africanas',
+    summary: 'Animal terrestre de grande altura e elegância.',
+    description: 'Elegante, serena e de grande altura. Percorre as savanas com visão privilegiada e passos suaves.',
     alt: 'Girafas elegantes sob a luz natural da savana africana'
   }
 ];

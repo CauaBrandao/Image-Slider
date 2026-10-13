@@ -1,12 +1,11 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 /**
- * Componente SliderControls
- * Subcomponentes:
- * - Botão anterior
- * - Botão próximo
- * - Indicadores de página (com aria-current)
- * - Contador formatado (ex: 03 / 05)
+ * Componente SliderControls fiel ao Figma
+ * - Botão anterior (fundo branco, borda lilás, seta escura)
+ * - Botão próximo (fundo roxo #6039AD, seta branca)
+ * - Indicadores de página (5 pontos, ponto ativo #6039AD, inativos #D8CEF0)
+ * - Contador formatado (ex: 03 / 05, exibido à direita no mobile)
  */
 export default function SliderControls({
   index = 0,
@@ -20,16 +19,36 @@ export default function SliderControls({
 
   return (
     <div
-      className="w-full flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-mauve/10"
-      aria-label="Controles de navegação do carrossel"
+      className="w-full flex items-center justify-between gap-4 pt-4"
+      aria-label="Controles do carrossel"
     >
-      {/* Grupo: Indicadores e Contador */}
-      <div className="flex items-center gap-4">
-        {/* Indicadores de página */}
+      {/* Botões Anterior e Próximo + Indicadores de página */}
+      <div className="flex items-center gap-3 sm:gap-5">
+        {/* Botão Anterior */}
+        <button
+          type="button"
+          aria-label="Slide anterior"
+          onClick={onPrevious}
+          className="inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white text-ink border border-[#E2DCF4] shadow-xs hover:border-mauve hover:text-mauve transition-all active:scale-95 focus-visible:ring-2 focus-visible:ring-mauve focus-visible:outline-none cursor-pointer"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+
+        {/* Botão Próximo */}
+        <button
+          type="button"
+          aria-label="Próximo slide"
+          onClick={onNext}
+          className="inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-mauve text-white shadow-xs hover:bg-[#4E2B91] transition-all active:scale-95 focus-visible:ring-2 focus-visible:ring-mauve focus-visible:outline-none cursor-pointer"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+
+        {/* Indicadores de página (dots) - Visíveis no Desktop e adaptáveis no Mobile */}
         <div
           role="tablist"
           aria-label="Indicadores dos slides"
-          className="flex items-center gap-1.5"
+          className="hidden sm:flex items-center gap-2 pl-2"
         >
           {Array.from({ length: count }).map((_, i) => {
             const isActive = i === index;
@@ -42,47 +61,26 @@ export default function SliderControls({
                 aria-current={isActive ? 'true' : 'false'}
                 aria-label={`Ir para a imagem ${i + 1} de ${count}`}
                 onClick={() => onSelect?.(i)}
-                className={`transition-all duration-300 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mauve ${
+                className={`transition-all duration-300 rounded-full cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mauve ${
                   isActive
-                    ? 'w-7 h-2.5 bg-mauve shadow-sm shadow-mauve/30'
-                    : 'w-2.5 h-2.5 bg-mauve/25 hover:bg-mauve/45'
+                    ? 'w-2.5 h-2.5 bg-mauve ring-2 ring-mauve/30'
+                    : 'w-2 h-2 bg-[#D8CEF0] hover:bg-mauve/50'
                 }`}
               />
             );
           })}
         </div>
-
-        {/* Contador 03 / 05 */}
-        <div
-          className="text-xs sm:text-sm font-semibold tracking-wider text-slate-500 tabular-nums select-none"
-          aria-live="polite"
-          aria-atomic="true"
-        >
-          <span className="text-ink font-bold">{currentFormatted}</span>
-          <span className="mx-1 text-slate-400">/</span>
-          <span>{totalFormatted}</span>
-        </div>
       </div>
 
-      {/* Grupo: Botões Anterior e Próximo */}
-      <div className="flex items-center gap-2">
-        <button
-          type="button"
-          aria-label="Imagem anterior"
-          onClick={onPrevious}
-          className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-white text-ink border border-mauve/20 shadow-sm hover:bg-mauve hover:text-white hover:border-transparent transition-all duration-200 active:scale-95 focus-visible:ring-2 focus-visible:ring-mauve focus-visible:outline-none cursor-pointer"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-
-        <button
-          type="button"
-          aria-label="Próxima imagem"
-          onClick={onNext}
-          className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-white text-ink border border-mauve/20 shadow-sm hover:bg-mauve hover:text-white hover:border-transparent transition-all duration-200 active:scale-95 focus-visible:ring-2 focus-visible:ring-mauve focus-visible:outline-none cursor-pointer"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
+      {/* Contador 03 / 05 (Exibido no Mobile e disponível para leitores de tela) */}
+      <div
+        className="sm:hidden text-xs font-bold tracking-wider text-mauve tabular-nums select-none"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <span>{currentFormatted}</span>
+        <span className="mx-0.5 text-slate-400">/</span>
+        <span>{totalFormatted}</span>
       </div>
     </div>
   );
