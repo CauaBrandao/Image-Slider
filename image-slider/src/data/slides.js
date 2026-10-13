@@ -1,53 +1,53 @@
 export const slides = [
   {
-    id: 1,
-    title: "Companheiro Leal",
-    subtitle: "Fauna Doméstica",
-    description: "A conexão genuína e a lealdade incondicional que transformam o cotidiano em momentos de carinho e pura fidelidade.",
-    image: "/images/image-1.jpg",
-    alt: "Retrato de um cão amigável",
-    tag: "Fidelidade",
-    accent: "#f59e0b"
+    id: 'cachorros',
+    image: '/images/image-1.jpg',
+    animal: 'Cachorrinhos',
+    species: 'Canis lupus familiaris',
+    badge: 'Companheiros',
+    summary: 'Lealdade, curiosidade e afeto sem limites.',
+    description: 'Companheiros curiosos e leais que transformam qualquer momento em afeto puro e alegria contagiante.',
+    alt: 'Dois cachorrinhos curiosos olhando atentamente'
   },
   {
-    id: 2,
-    title: "Elegância da Savana",
-    subtitle: "Planícies Africanas",
-    description: "Com passos serenos e silhueta imponente, a girafa domina o horizonte das paisagens mais fascinantes do planeta.",
-    image: "/images/image-2.jpg",
-    alt: "Girafa majestosa na savana",
-    tag: "Vida Selvagem",
-    accent: "#eab308"
+    id: 'urso',
+    image: '/images/image-2.jpg',
+    animal: 'Urso',
+    species: 'Ursus arctos',
+    badge: 'Vida Selvagem',
+    summary: 'Força bruta e adaptabilidade nas florestas.',
+    description: 'Força e vida selvagem em perfeita harmonia com os ecossistemas montanhosos e florestas intocadas.',
+    alt: 'Grande urso pardo em seu habitat natural na floresta'
   },
   {
-    id: 3,
-    title: "O Soberano da Selva",
-    subtitle: "Predadores Alfa",
-    description: "Olhar penetrante e postura régia: o leão personifica a nobreza e o poder no equilíbrio dos grandes ecossistemas.",
-    image: "/images/image-3.jpg",
-    alt: "Leão imponente com juba vasta",
-    tag: "Liderança",
-    accent: "#f97316"
+    id: 'panda',
+    image: '/images/image-3.jpg',
+    animal: 'Panda-gigante',
+    species: 'Ailuropoda melanoleuca',
+    badge: 'Espécie Protegida',
+    summary: 'O panda se alimenta principalmente de bambu.',
+    description: 'Uma das espécies mais carismáticas da China. O panda se alimenta principalmente de bambu e representa a harmonia com as florestas orientais.',
+    alt: 'Panda-gigante relaxando tranquilamente entre vegetação'
   },
   {
-    id: 4,
-    title: "Serenidade Oriental",
-    subtitle: "Florestas de Bambu",
-    description: "Ícone mundial da preservação ambiental, o urso panda transmite paz, calma e a harmonia vital da natureza.",
-    image: "/images/image-4.jpg",
-    alt: "Panda calmo entre vegetação",
-    tag: "Preservação",
-    accent: "#10b981"
+    id: 'leao',
+    image: '/images/image-4.jpg',
+    animal: 'Leão',
+    species: 'Panthera leo',
+    badge: 'Predador Alfa',
+    summary: 'Estrutura social única e olhar imponente.',
+    description: 'Um grande felino social que domina as savanas com sua juba imponente e liderança de grupo admirável.',
+    alt: 'Retrato de um leão macho majestoso com juba imponente'
   },
   {
-    id: 5,
-    title: "Força das Montanhas",
-    subtitle: "Territórios Nórdicos",
-    description: "A imponência e a resiliência do urso nas densas florestas temperadas, guardião dos refúgios intocados.",
-    image: "/images/image-5.jpg",
-    alt: "Urso robusto em seu habitat",
-    tag: "Resiliência",
-    accent: "#3b82f6"
+    id: 'girafa',
+    image: '/images/image-5.jpg',
+    animal: 'Girafa',
+    species: 'Giraffa camelopardalis',
+    badge: 'Herbívoro Gigante',
+    summary: 'Animal terrestre de grande altura.',
+    description: 'Animal terrestre de grande altura que percorre as planícies com elegância ímpar e calma natural.',
+    alt: 'Girafas elegantes sob a luz natural da savana africana'
   }
 ];
 
